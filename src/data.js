@@ -1,23 +1,22 @@
 // Sample data — replace with your real server info & staff.
 export const SERVER = {
-  name: 'IRON CITY',
-  tagline: 'هیچ‌کس بی‌قانونی رایگان نیست',
+  name: 'AY ROLEPLAY',
+  tagline: 'تجربه ی جدید در رول پلی',
   code: 'RP // ESX LEGACY // EST. 2021',
 }
 
-export const ABOUT_TEXT = `آیرن سیتی یه شهر خشن و بی‌رحمه؛ جایی که هر گوشه‌ش یه باند، یه معامله، و یه فرصت برای صعود یا سقوطه.
-روی پایه‌ی ESX Legacy ساخته شده، با اقتصاد واقعی، جرم‌وجنایت سازمان‌یافته و پلیسی که خواب نداره.
-هر تصمیمی که می‌گیری، یه رد پا می‌ذاره — مطمئن شو رد پای درستیه.`
+export const ABOUT_TEXT = `Step into a living world where every decision shapes your story. Build your character from the ground up, choose your own path, create lasting alliances or rivalries, and experience a realistic roleplay environment driven by an active community, balanced economy, custom systems, and endless opportunities. Whether you dream of becoming a respected business owner, a fearless law enforcement officer, a skilled medic, or someone who thrives in the underground, your journey begins here and every action leaves a lasting impact.
+`
 
 export const RULES = [
   'رول‌پلی واقع‌گرایانه اجباریه',
   'متاگیمینگ و پاورگیمینگ ممنوع',
-  'FailRP هر شکلش قابل تنبیهه',
-  'به تصمیم استاف احترام بذار',
+  'Non-RP هر شکلش قابل تنبیهه',
+  'به تصمیم استف احترام بذار',
 ]
 
 export const TEAM = [
-  { name: 'Reza "Wolf" K.', role: 'Founder / Owner', tag: 'CASE #001', initials: 'RW' },
+  { name: 'Amir Ventus', role: 'Founder', tag: 'CASE #001', initials: 'RW' },
   { name: 'Sara Nikan', role: 'Head Admin', tag: 'CASE #002', initials: 'SN' },
   { name: 'Amir "Ghost"', role: 'Lead Developer', tag: 'CASE #003', initials: 'AG' },
   { name: 'Mohammad Rahi', role: 'Server Moderator', tag: 'CASE #004', initials: 'MR' },
