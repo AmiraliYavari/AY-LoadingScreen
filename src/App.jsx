@@ -10,8 +10,14 @@ export default function App() {
   return (
     <div className="screen">
       <div className="wallpaper" />
+      <div className="vignette" />
       <div className="grain" />
       <div className="beam" />
+      <div className="embers" aria-hidden="true">
+        {Array.from({ length: 14 }).map((_, i) => (
+          <span key={i} />
+        ))}
+      </div>
       <MusicPlayer />
 
       <div className="layout">

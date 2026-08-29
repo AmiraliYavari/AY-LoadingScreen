@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
+import { SERVER } from './data'
 
 // Put your track at public/music/theme.mp3 (see README).
 // NOTE: must be a relative path (./...), not /music/... — FiveM's NUI
 // origin isn't your site root, so an absolute path 404s after build.
 const TRACK_SRC = './music/theme.mp3'
-const TRACK_NAME = 'Iron City — Theme'
+const TRACK_NAME = `${SERVER.name} — Theme`
 
 export default function MusicPlayer() {
   const audioRef = useRef(null)

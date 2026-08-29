@@ -1,8 +1,8 @@
 fx_version 'cerulean'
 game 'gta5'
 
-author 'you'
-description 'Iron City RP — custom loadscreen'
+author 'AY Team'
+description 'AY ROLEPLAY — custom loadscreen'
 version '1.0.0'
 
 -- FiveM loadscreens are just a webpage, this points at the built React app

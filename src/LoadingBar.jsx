@@ -48,6 +48,9 @@ export default function LoadingBar() {
         <div className="loadbar__tape-fill" style={{ width: `${pct}%` }}>
           <span className="loadbar__tape-stripes" />
         </div>
+        <div className="loadbar__marker" style={{ right: `${pct}%` }}>
+          <span className="loadbar__star">★</span>
+        </div>
       </div>
 
       <div className="loadbar__ticks">
