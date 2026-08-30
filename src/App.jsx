@@ -32,20 +32,7 @@ export default function App() {
     <div className="screen" dir="rtl">
       {/* ===== background layers ===== */}
       <div className="bg-wallpaper" />
-      <div className="bg-mesh" aria-hidden="true">
-        <span />
-        <span />
-        <span />
-      </div>
-      <div className="bg-grid" aria-hidden="true" />
-      <div className="scanline" aria-hidden="true" />
-      <div className="grain" aria-hidden="true" />
       <div className="vignette" aria-hidden="true" />
-      <div className="embers" aria-hidden="true">
-        {Array.from({ length: 14 }).map((_, i) => (
-          <span key={i} />
-        ))}
-      </div>
       <div className="frame" aria-hidden="true">
         <span className="frame__corner frame__corner--tl" />
         <span className="frame__corner frame__corner--tr" />
