@@ -2,19 +2,17 @@ import { TEAM } from './data'
 
 export default function Team() {
   return (
-    <div className="team">
+    <ul className="roster">
       {TEAM.map((m) => (
-        <div className="team__card" key={m.tag}>
-          <div className="team__photo">
-            <span>{m.initials}</span>
-          </div>
-          <div className="team__info">
-            <p className="team__name">{m.name}</p>
-            <p className="team__role">{m.role}</p>
-          </div>
-          <span className="team__stamp">{m.tag}</span>
-        </div>
+        <li className="roster__item" key={m.tag}>
+          <span className="roster__avatar">{m.initials}</span>
+          <span className="roster__info">
+            <span className="roster__name">{m.name}</span>
+            <span className="roster__role">{m.role}</span>
+          </span>
+          <span className="roster__tag">{m.tag}</span>
+        </li>
       ))}
-    </div>
+    </ul>
   )
 }

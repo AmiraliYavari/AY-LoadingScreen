@@ -57,29 +57,31 @@ export default function MusicPlayer() {
         onError={() => console.error(`[MusicPlayer] could not load "${TRACK_SRC}" — check the file exists at public/music/theme.mp3`)}
       />
 
-      <button className="player__toggle" onClick={toggle} aria-label={playing ? 'توقف' : 'پخش'}>
+      <button className="player__btn" onClick={toggle} aria-label={playing ? 'توقف' : 'پخش'}>
         {playing ? (
-          <svg viewBox="0 0 24 24" width="16" height="16"><rect x="5" y="4" width="5" height="16" fill="currentColor" /><rect x="14" y="4" width="5" height="16" fill="currentColor" /></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14"><rect x="5" y="4" width="5" height="16" fill="currentColor" /><rect x="14" y="4" width="5" height="16" fill="currentColor" /></svg>
         ) : (
-          <svg viewBox="0 0 24 24" width="16" height="16"><polygon points="6,4 20,12 6,20" fill="currentColor" /></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14"><polygon points="6,4 20,12 6,20" fill="currentColor" /></svg>
         )}
       </button>
 
-      <div className="player__info">
-        <span className="player__label">{playing ? 'در حال پخش' : 'موزیک متوقف'}</span>
-        <span className="player__track">{TRACK_NAME}</span>
+      <div className={`player__eq ${playing ? 'is-playing' : ''}`} aria-hidden="true">
+        <span /><span /><span /><span />
       </div>
 
-      <input
-        className="player__volume"
-        type="range"
-        min="0"
-        max="1"
-        step="0.01"
-        value={volume}
-        onChange={(e) => setVolume(parseFloat(e.target.value))}
-        aria-label="میزان صدا"
-      />
+      <div className="player__meta">
+        <span className="player__track">{TRACK_NAME}</span>
+        <input
+          className="player__volume"
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value={volume}
+          onChange={(e) => setVolume(parseFloat(e.target.value))}
+          aria-label="میزان صدا"
+        />
+      </div>
     </div>
   )
 }

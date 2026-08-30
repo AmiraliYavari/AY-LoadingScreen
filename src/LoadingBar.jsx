@@ -38,25 +38,20 @@ export default function LoadingBar() {
   const pct = Math.min(100, Math.round(progress))
 
   return (
-    <div className="loadbar">
-      <div className="loadbar__meta">
-        <span className="loadbar__status">{LOADING_STATUSES[statusIdx]}</span>
-        <span className="loadbar__pct">{String(pct).padStart(3, '0')}%</span>
+    <div className="hud__inner">
+      <div className="hud__row">
+        <span className="hud__status">{LOADING_STATUSES[statusIdx]}</span>
+        <span className="hud__pct">
+          {String(pct).padStart(3, '0')}
+          <em>%</em>
+        </span>
       </div>
 
-      <div className="loadbar__tape" role="progressbar" aria-valuenow={pct} aria-valuemin={0} aria-valuemax={100}>
-        <div className="loadbar__tape-fill" style={{ width: `${pct}%` }}>
-          <span className="loadbar__tape-stripes" />
+      <div className="hud__track" role="progressbar" aria-valuenow={pct} aria-valuemin={0} aria-valuemax={100}>
+        <div className="hud__fill" style={{ width: `${pct}%` }}>
+          <span className="hud__shimmer" />
         </div>
-        <div className="loadbar__marker" style={{ right: `${pct}%` }}>
-          <span className="loadbar__star">★</span>
-        </div>
-      </div>
-
-      <div className="loadbar__ticks">
-        {Array.from({ length: 20 }).map((_, i) => (
-          <span key={i} className={i < pct / 5 ? 'is-lit' : ''} />
-        ))}
+        <div className="hud__marker" style={{ right: `${pct}%` }} />
       </div>
     </div>
   )
