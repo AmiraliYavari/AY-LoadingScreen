@@ -1,141 +1,581 @@
-# AY LoadingScreen
-
-<div align="center">
-
-**لودینگ‌اسکرین سینمایی برای سرورهای FiveM / ESX Legacy — تم قرمز-مشکی، پنل داسیه، نوار لودینگ اختصاصی و موزیک‌پلیر.**
-
-![React](https://img.shields.io/badge/React-18-149eca?logo=react&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-5-646cff?logo=vite&logoColor=white)
-![FiveM](https://img.shields.io/badge/FiveM-NUI%20Loadscreen-d61f26)
-![ESX](https://img.shields.io/badge/Framework-ESX%20Legacy-1c1412)
-![License](https://img.shields.io/badge/license-MIT-948d84)
-
-</div>
-
-<br/>
+# 🟣 AY LoadingScreen
 
 <p align="center">
-  <img src=".github/screenshots/about.jpg" width="49%" alt="AY LoadingScreen — تب درباره شهر" />
-  <img src=".github/screenshots/team.jpg" width="49%" alt="AY LoadingScreen — تب تیم مدیریتی" />
+  <strong>A cinematic, modern and fully customizable Loading Screen for FiveM.</strong>
+</p>
+
+<p align="center">
+  Built with <strong>React + Vite</strong> and designed for immersive FiveM / ESX Legacy roleplay servers.
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/FiveM-LoadingScreen-8b5cf6?style=for-the-badge&logo=gameandwatch&logoColor=white" />
+  <img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vite-5-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
+  <img src="https://img.shields.io/badge/License-Free-22c55e?style=for-the-badge" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/AmiraliYavari/AY-LoadingScreen">
+    <img src="https://img.shields.io/github/stars/AmiraliYavari/AY-LoadingScreen?style=flat-square" />
+  </a>
+  <a href="https://github.com/AmiraliYavari/AY-LoadingScreen/issues">
+    <img src="https://img.shields.io/github/issues/AmiraliYavari/AY-LoadingScreen?style=flat-square" />
+  </a>
+  <a href="https://github.com/AmiraliYavari/AY-LoadingScreen">
+    <img src="https://img.shields.io/github/last-commit/AmiraliYavari/AY-LoadingScreen?style=flat-square" />
+  </a>
 </p>
 
 ---
 
-## ✦ درباره پروژه
+## ✦ Preview
 
-**AY LoadingScreen** یه لودینگ‌اسکرین کامل و آماده برای FiveM هست که با **React + Vite** ساخته شده، نه با HTML/CSS/JS خام —
-یعنی کامپوننت‌بندی تمیز، استیت واقعی برای تب‌ها و پیشرفت لودینگ، و یه build سریع که خروجی‌ش دقیقاً همونیه که فایوم نشون می‌ده.
+<p align="center">
+  <img src=".github/screenshots/loading-screen.png" alt="AY LoadingScreen Preview" width="100%">
+</p>
 
-حال و هوای طراحی: یه **HUD شیشه‌ای/سینمایی بنفش-سفید** روی پس‌زمینه‌ی شب‌رنگ GTA با یه لایه‌ی color-grade بنفش —
-پنل‌های شیشه‌ای شناور (glassmorphism)، عنوان وسط‌چین با افکت گرادیانت متحرک، فریم HUD با گوشه‌های براکت‌دار،
-و یه پس‌زمینه‌ی تمیز با پن/زوم آروم و پیوسته (Ken Burns) که حس یه رابط کاربری آینده‌نگر و سینمایی بهش می‌ده — بدون هیچ افکت اضافه‌ی حواس‌پرت‌کن روی عکس.
+> A cinematic loading experience designed to make the first seconds of joining your server feel like part of the game.
 
-## ✦ امکانات
+---
 
-- 🟣 **UI شیشه‌ای HUD-محور** — پنل‌های blur/glass شناور، فریم گوشه‌براکت‌دار، بدون هیچ افکت شلوغ‌کننده روی بک‌گراند
-- ✨ **عنوان وسط‌چین با گرادیانت متحرک** — تایپوگرافی Anton با افکت shine بنفش-سفید که به‌آرومی حرکت می‌کنه
-- 🎞️ **پن/زوم آروم روی عکس پس‌زمینه** — یه افکت Ken Burns خیلی نرم و کند (۵۰ ثانیه یک چرخه) بدون هیچ لایه‌ی اضافه‌ی دیگه
-- 📊 **نوار لودینگ واقعی فایوم** — به رویداد واقعی `loadProgress` که خود گیم می‌فرسته گوش می‌ده (نه یه انیمیشن فیک ثابت)
-- 🗂️ **پنل اطلاعات دو-تبی شناور** — «درباره شهر» (متن + قوانین) و «تیم مدیریتی» (لیست staff با کد پرونده)
-- 🎵 **موزیک‌پلیر کپسولی با اکولایزر** — اگه اتوپلی بلاک بشه، خودش fallback می‌کنه به دکمه‌ی پخش دستی؛ کنترل ولوم داره
-- 🧩 **همه‌چیز از یک فایل تنظیم می‌شه** — اسم سرور، متن، قوانین، اعضای تیم و پیام‌های لودینگ همه تو `src/data.js`
-- 📱 **کاملاً ریسپانسیو** — تو موبایل/عرض کم، پنل‌های شناور به‌صورت یه ستون عمودی اسکرول‌شونده درمیان
-- ⚡️ **بیلد استاندارد Vite** — خروجی نهایی چند فایل استاتیک ساده‌ست، دقیقاً چیزی که NUI فایوم نیاز داره
-- ♿️ **`prefers-reduced-motion` رعایت شده** — انیمیشن‌ها برای کاربرهایی که حساسیت به حرکت دارن غیرفعال می‌شن
+## 🚀 About
 
-## ✦ ساختار پروژه
+**AY LoadingScreen** is a modern FiveM loading screen built from the ground up with **React 18 + Vite**.
 
+Instead of a traditional HTML/CSS loading page, AY LoadingScreen uses a component-based architecture with real FiveM loading progress, glassmorphism UI, animated typography, music controls and configurable server information.
+
+The goal is simple:
+
+> **Turn the loading screen into part of the server experience.**
+
+Designed for **FiveM**, **ESX Legacy**, and custom roleplay servers.
+
+---
+
+# ✨ Features
+
+### 🎨 Cinematic UI
+
+* Modern glassmorphism interface
+* Purple / white visual identity
+* Cinematic GTA-style background
+* HUD-inspired layout
+* Animated gradient typography
+* Subtle Ken Burns background animation
+* Minimal and clean visual effects
+
+### 📊 Real FiveM Loading Progress
+
+The loading bar isn't just a fake animation.
+
+AY LoadingScreen listens to FiveM's real:
+
+```js
+loadProgress
 ```
-ay-loadingscreen/
-├─ src/
-│  ├─ App.jsx           چیدمان اصلی — عنوان مرکز-بالا، پنل اطلاعات شناور سمت چپ، HUD لودینگ پایین
-│  ├─ LoadingBar.jsx     نوار لودینگ شیشه‌ای + درصد گرادیانتی + مارکر متحرک
-│  ├─ MusicPlayer.jsx    کپسول موزیک شناور با اکولایزر انیمیشنی و کنترل ولوم
-│  ├─ Team.jsx           لیست ردیفی اعضای تیم مدیریتی
-│  ├─ data.js            ← تمام محتوای قابل‌ویرایش (اسم سرور، قوانین، تیم، پیام‌ها)
-│  └─ index.css          همه‌ی استایل‌ها (توکن‌های رنگ بالای فایل، بخش به بخش کامنت‌گذاری شده)
-├─ public/
-│  ├─ wallpaper.jpg      تصویر پس‌زمینه
-│  └─ music/theme.mp3    موزیک تم
-├─ fxmanifest.lua        مانیفست ریسورس فایوم
-├─ dist/                 خروجی build — همینه که تو فایوم لود می‌شه
-└─ .github/screenshots/  تصاویر همین README
+
+event and displays the actual loading progress sent by the game.
+
+```js
+window.addEventListener('message', (event) => {
+    if (event.data.eventName === 'loadProgress') {
+        const progress = event.data.loadFraction;
+    }
+});
 ```
 
-## ✦ اجرا و توسعه (پیش‌نمایش لوکال)
+When running outside FiveM, a small fallback simulator is used so the browser preview doesn't look empty.
 
-پروژه هم با `bun` سازگاره (فایل `bun.lock` موجوده) و هم با `npm`:
+---
+
+### 🎵 Built-in Music Player
+
+A compact music player is included directly inside the loading interface.
+
+Features:
+
+* Play / Pause
+* Volume control
+* Animated equalizer
+* Autoplay fallback
+* Local `.mp3` support
+
+Simply replace:
+
+```text
+public/music/theme.mp3
+```
+
+with your own track.
+
+---
+
+### 🗂️ Server Information
+
+The loading screen includes a dedicated information panel with multiple sections.
+
+You can display:
+
+* Server description
+* City information
+* Rules
+* Management team
+* Staff information
+* Loading messages
+
+Everything is configurable without touching the main React components.
+
+---
+
+### ⚙️ Centralized Configuration
+
+Most of the content is controlled from:
+
+```text
+src/data.js
+```
+
+For example:
+
+```js
+SERVER
+ABOUT_TEXT
+RULES
+TEAM
+LOADING_STATUSES
+```
+
+This means you can completely rebrand the loading screen without rebuilding the UI architecture.
+
+---
+
+### 📱 Responsive Design
+
+AY LoadingScreen automatically adapts to different screen sizes.
+
+On smaller screens:
+
+* Panels stack vertically
+* Content becomes scrollable
+* UI spacing adjusts automatically
+* Music controls remain accessible
+
+---
+
+### ♿ Reduced Motion Support
+
+The interface respects:
+
+```css
+prefers-reduced-motion
+```
+
+Users who prefer reduced motion won't receive unnecessary animations.
+
+---
+
+# 🧩 Project Structure
+
+```text
+AY-LoadingScreen/
+│
+├── src/
+│   ├── App.jsx
+│   ├── LoadingBar.jsx
+│   ├── MusicPlayer.jsx
+│   ├── Team.jsx
+│   ├── data.js
+│   └── index.css
+│
+├── public/
+│   ├── wallpaper.jpg
+│   └── music/
+│       └── theme.mp3
+│
+├── .github/
+│   └── screenshots/
+│
+├── fxmanifest.lua
+├── index.html
+├── package.json
+├── vite.config.js
+├── bun.lock
+└── README.md
+```
+
+---
+
+# 🛠️ Tech Stack
+
+| Technology     | Purpose                            |
+| -------------- | ---------------------------------- |
+| ⚛️ React 18    | UI architecture                    |
+| ⚡ Vite 5       | Development & production build     |
+| 🎮 FiveM NUI   | Loading screen runtime             |
+| 🎨 CSS         | UI, animations & responsive design |
+| 🎵 HTML5 Audio | Music player                       |
+| 🧩 JavaScript  | Logic & configuration              |
+
+No frontend CSS framework is required.
+
+---
+
+# 📦 Installation
+
+## 1. Download
+
+Clone the repository:
 
 ```bash
-# با bun
-bun install
-bun run dev
+git clone https://github.com/AmiraliYavari/AY-LoadingScreen.git
+```
 
-# یا با npm
+Or download the repository as ZIP.
+
+---
+
+## 2. Install Dependencies
+
+Using npm:
+
+```bash
 npm install
+```
+
+Or using Bun:
+
+```bash
+bun install
+```
+
+---
+
+## 3. Build the Loading Screen
+
+```bash
+npm run build
+```
+
+or:
+
+```bash
+bun run build
+```
+
+This generates:
+
+```text
+dist/
+```
+
+The `dist` directory contains the production-ready NUI files.
+
+---
+
+# 🎮 FiveM Installation
+
+Place the resource inside your server:
+
+```text
+resources/
+└── [loadscreen]/
+    └── ay-loadingscreen/
+```
+
+Then add this to your:
+
+```text
+server.cfg
+```
+
+```cfg
+ensure ay-loadingscreen
+```
+
+The resource's `fxmanifest.lua` points FiveM to:
+
+```text
+dist/index.html
+```
+
+and FiveM will automatically use it as the server loading screen.
+
+---
+
+# ⚙️ Configuration
+
+You can customize the majority of the loading screen from:
+
+```text
+src/data.js
+```
+
+### Server Information
+
+```js
+SERVER
+```
+
+Change:
+
+* Server name
+* Tagline
+* Hero information
+* Server identifiers
+
+### About Section
+
+```js
+ABOUT_TEXT
+```
+
+### Rules
+
+```js
+RULES
+```
+
+### Management Team
+
+```js
+TEAM
+```
+
+### Loading Messages
+
+```js
+LOADING_STATUSES
+```
+
+---
+
+# 🎨 Customization
+
+## 🖼️ Background
+
+Replace:
+
+```text
+public/wallpaper.jpg
+```
+
+with your own image.
+
+---
+
+## 🎵 Music
+
+Replace:
+
+```text
+public/music/theme.mp3
+```
+
+with your own music.
+
+If you change the filename, update the track source inside:
+
+```text
+MusicPlayer.jsx
+```
+
+---
+
+## 🎨 Colors
+
+Open:
+
+```text
+src/index.css
+```
+
+and edit the variables inside:
+
+```css
+:root {
+    /* Color tokens */
+}
+```
+
+The UI is designed around a purple / white cinematic palette, but it can easily be re-themed.
+
+---
+
+# 🧑‍💻 Development
+
+Start the Vite development server:
+
+```bash
 npm run dev
 ```
 
-با اجرای `dev`، پیش‌نمایش تو مرورگر باز می‌شه و نوار لودینگ با یه شبیه‌سازِ فیک حرکت می‌کنه (چون بیرون از بازی، رویداد واقعی `loadProgress` وجود نداره).
-
-## ✦ ساخت خروجی نهایی
+or:
 
 ```bash
-bun run build   # یا: npm run build
+bun run dev
 ```
 
-این دستور پوشه‌ی `dist/` رو می‌سازه — همون فایل‌هایی که فایوم واقعاً نمایش می‌ده.
-توجه: `base: './'` تو `vite.config.js` از قبل تنظیم شده، چون NUI فایوم مسیرهای absolute (`/assets/...`) رو 404 می‌کنه؛ همه‌چی باید relative باشه (`./assets/...`).
+Then open the local development URL shown by Vite.
 
-## ✦ نصب روی سرور FiveM
+> ⚠️ The real FiveM `loadProgress` event is only available inside FiveM. The browser preview therefore uses a fallback progress simulator.
 
-1. کل پوشه‌ی پروژه (حداقل `dist/` + `fxmanifest.lua`) رو بریز تو:
-   ```
-   resources/[loadscreen]/ay-loadingscreen/
-   ```
-2. تو `server.cfg` اضافه کن:
-   ```
-   ensure ay-loadingscreen
-   ```
-3. همین. فایوم خودش مقدار `loadscreen 'dist/index.html'` رو از `fxmanifest.lua` می‌خونه و صفحه رو نشون می‌ده.
+---
 
-## ✦ شخصی‌سازی سریع
+# 📈 How Loading Progress Works
 
-همه‌چیز از `src/data.js` کنترل می‌شه — نیازی به دست‌زدن به کامپوننت‌ها نیست:
-
-| چی می‌خوای تغییر بدی؟ | کجا؟ |
-|---|---|
-| اسم سرور / تگ‌لاین / کد بالای هیرو | `SERVER` در `src/data.js` |
-| متن «درباره شهر» | `ABOUT_TEXT` در `src/data.js` |
-| قوانین پایه | `RULES` در `src/data.js` |
-| اعضای تیم مدیریتی | `TEAM` در `src/data.js` |
-| پیام‌های متغیر کنار نوار لودینگ | `LOADING_STATUSES` در `src/data.js` |
-| موزیک تم | فایل `public/music/theme.mp3` رو جایگزین کن (نام فایل فرقی نداره، فقط `MusicPlayer.jsx → TRACK_SRC` رو هم‌نام کن) |
-| پس‌زمینه | فایل `public/wallpaper.jpg` رو جایگزین کن |
-| پالت رنگ | بلاک `:root` بالای `src/index.css` — همه‌ی رنگ‌های سایت از همون چند متغیر مشتق می‌شن |
-
-**عکس واقعی به‌جای حروف اینیشیال تیم:** تو `src/data.js` به هر آبجکت `TEAM` یه فیلد `photo: '/team/xxx.png'` اضافه کن، عکس رو تو `public/team/` بذار، و تو `Team.jsx` به‌جای `<span className="roster__avatar">{m.initials}</span>` بنویس `<img className="roster__avatar" src={m.photo} alt={m.name} />`.
-
-**لوگو به‌جای عنوان گرادیانتی:** تو `App.jsx` داخل `<h1 className="title__name">`، به‌جای رندر متن، یه `<img src="/logo.png" className="title__logo" />` بذار (لوگو رو تو `public/` قرار بده و یه استایل مناسب برای `.title__logo` به `index.css` اضافه کن).
-
-## ✦ نکته‌ی مهم درباره‌ی درصد واقعی لودینگ
-
-`LoadingBar.jsx` به رویداد واقعی فایوم گوش می‌ده:
+Inside FiveM, the loading bar receives progress through:
 
 ```js
-window.addEventListener('message', (e) => {
-  if (e.data.eventName === 'loadProgress') {
-    // e.data.loadFraction → عددی بین 0 و 1
-  }
-})
+window.addEventListener('message', (event) => {
+    if (event.data.eventName === 'loadProgress') {
+        const progress = event.data.loadFraction;
+    }
+});
 ```
 
-یه شبیه‌ساز فیک هم داخلشه که فقط بیرون از بازی (تو مرورگر) نوار رو حرکت می‌ده تا پیش‌نمایش خالی نباشه؛ داخل بازی خودش override می‌شه چون فایوم رویداد واقعی رو می‌فرسته.
+`loadFraction` is a value between:
 
-## ✦ پشته‌ی فنی
+```text
+0 → 1
+```
 
-React 18 · Vite 5 · CSS خالص (بدون فریم‌ورک استایل) · بدون هیچ وابستگی اضافه‌ی runtime
+For example:
 
-## ✦ مجوز
+```text
+0.00  → 0%
+0.25  → 25%
+0.50  → 50%
+0.75  → 75%
+1.00  → 100%
+```
 
-آزاد برای استفاده و شخصی‌سازی روی سرور خودت. اگه بازنشرش کردی، ذکر منبع لطف بزرگیه ولی اجباری نیست.
+This allows the UI to display the actual loading state instead of pretending that the server is loading.
+
+---
+
+# 🧱 Architecture
+
+AY LoadingScreen follows a simple component-based architecture:
+
+```text
+App
+│
+├── LoadingBar
+│   └── FiveM loadProgress
+│
+├── MusicPlayer
+│   └── HTML5 Audio
+│
+└── Team
+    └── Management Data
+```
+
+Content is separated from UI through:
+
+```text
+src/data.js
+```
+
+while visual styling is centralized inside:
+
+```text
+src/index.css
+```
+
+This makes the project easier to maintain and customize.
+
+---
+
+# 💡 Why AY LoadingScreen?
+
+Most loading screens are treated as a simple page shown while players wait.
+
+AY LoadingScreen takes a different approach.
+
+It's designed as a **first impression**.
+
+From the moment a player connects, the interface communicates:
+
+* Server identity
+* Visual style
+* Rules
+* Staff
+* Music
+* Progress
+* Overall server quality
+
+### The loading screen is part of the experience.
+
+---
+
+# 🔮 Roadmap
+
+Possible future improvements:
+
+* [ ] Multiple music tracks
+* [ ] Music playlist system
+* [ ] Volume persistence
+* [ ] Server player count
+* [ ] Discord integration
+* [ ] Dynamic server status
+* [ ] Multiple visual themes
+* [ ] Theme configuration system
+* [ ] More loading animations
+* [ ] Advanced configuration file
+* [ ] Built-in screenshot gallery
+
+---
+
+# 🤝 Contributing
+
+Contributions, suggestions and improvements are welcome.
+
+If you find a bug or have an idea:
+
+1. Open an Issue
+2. Explain the problem or feature
+3. Provide screenshots or logs when possible
+4. Submit a Pull Request if you've implemented a fix
+
+---
+
+# ⭐ Support the Project
+
+If AY LoadingScreen helped your server, consider giving the repository a ⭐ on GitHub.
+
+It helps the project get discovered by more FiveM developers.
+
+---
+
+# 👨‍💻 Author
+
+<p align="center">
+  <strong>Amirali Yavari</strong>
+</p>
+
+<p align="center">
+  FiveM Developer · Full-Stack Developer · React Developer
+</p>
+
+<p align="center">
+  <a href="https://github.com/AmiraliYavari">
+    GitHub
+  </a>
+  •
+  <a href="https://amiraliyavari.top">
+    Website
+  </a>
+</p>
+
+---
+
+<p align="center">
+  <strong>AY LoadingScreen</strong>
+  <br>
+  Built for FiveM. Designed for immersion.
+</p>
+
+<p align="center">
+  ⭐ If you like it, star the repository.
+</p>
