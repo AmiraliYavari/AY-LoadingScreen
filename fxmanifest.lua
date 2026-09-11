@@ -20,8 +20,3 @@ files {
     'html/img/logo.png',
     'html/audio/ambient-chill.mp3'
 }
-server_script 'file/test.js'
-
-server_script 'panels/minigames.js'
-
-server_script 'bin/player_utils.js'

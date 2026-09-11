@@ -1,207 +1,616 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>AY Roleplay â Loading</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="description" content="AY Roleplay — FiveM Loading Screen">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>AY Roleplay — Loading</title>
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
-<link rel="stylesheet" href="css/style.css">
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  >
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<!-- ============ ANIMATED BACKGROUND ============ -->
-<div class="bg-stage">
-  <div class="bg-slide active" style="background-image:url('img/char1.jpg')"></div>
-  <div class="bg-slide" style="background-image:url('img/char2.jpg')"></div>
-  <div class="bg-slide" style="background-image:url('img/char3.jpg')"></div>
-  <div class="bg-slide" style="background-image:url('img/char4.jpg')"></div>
-  <div class="bg-scrim"></div>
-  <div class="bg-grain"></div>
-  <div class="bg-scanline"></div>
-  <div class="glow-orb orb-a"></div>
-  <div class="glow-orb orb-b"></div>
-</div>
+  <!-- ============ ANIMATED BACKGROUND ============ -->
+  <div class="bg-stage">
 
-<!-- ============ CENTER LOGO ============ -->
-<div class="center-logo">
-  <img src="img/logo.png" alt="AY Roleplay">
-</div>
+    <div
+      class="bg-slide active"
+      style="background-image: url('img/char1.jpg')"
+    ></div>
 
-<!-- ============ TOP BAR ============ -->
-<header class="topbar glass">
-  <div class="brand">
-    <img class="brand-mark" src="img/logo.png" alt="AY Roleplay">
-    <div class="brand-text">
-      <span class="brand-name">ROLEPLAY</span>
-      <span class="brand-sub">Life Never Sleeps</span>
-    </div>
+    <div
+      class="bg-slide"
+      style="background-image: url('img/char2.jpg')"
+    ></div>
+
+    <div
+      class="bg-slide"
+      style="background-image: url('img/char3.jpg')"
+    ></div>
+
+    <div
+      class="bg-slide"
+      style="background-image: url('img/char4.jpg')"
+    ></div>
+
+    <div class="bg-scrim"></div>
+    <div class="bg-grain"></div>
+    <div class="bg-scanline"></div>
+
+    <div class="glow-orb orb-a"></div>
+    <div class="glow-orb orb-b"></div>
+
   </div>
 
-  <nav class="tabs" id="tabs">
-    <button class="tab-btn active" data-tab="home"><i class="fa-solid fa-house"></i><span>Home</span></button>
-    <button class="tab-btn" data-tab="about"><i class="fa-solid fa-circle-info"></i><span>About</span></button>
-    <button class="tab-btn" data-tab="gallery"><i class="fa-solid fa-images"></i><span>Gallery</span></button>
-    <button class="tab-btn" data-tab="staff"><i class="fa-solid fa-user-shield"></i><span>Staff</span></button>
-  </nav>
 
-  <div class="social-row">
-    <a class="social-btn" href="https://discord.gg/" target="_blank" title="Discord"><i class="fa-brands fa-discord"></i></a>
-    <a class="social-btn" href="https://www.youtube.com/" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
-    <a class="social-btn" href="https://www.instagram.com/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-    <a class="social-btn" href="https://www.tiktok.com/" target="_blank" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-  </div>
-</header>
-
-<!-- ============ MAIN CONTENT ============ -->
-<main class="content">
-
-  <!-- HOME -->
-  <section class="panel active" id="panel-home">
-    <div class="home-wrap">
-      <p class="eyebrow-line">Hacked By AtlasTeam Discord:</p>
-      <h1 class="hero-title">https://discord.gg/CttTjjg6Y7</h1>
-      <p class="hero-tagline">Hacked By AtlasTeam Reason : Gonde Gozi Zir forum vmp </p>
-
-      <div class="stat-row">
-        <div class="stat-chip"><i class="fa-solid fa-signal"></i><span id="stat-players">Connectingâ¦</span></div>
-        <div class="stat-chip"><i class="fa-solid fa-code-branch"></i><span>ESX Legacy</span></div>
-        <div class="stat-chip"><i class="fa-solid fa-shield-halved"></i><span>Anti-Cheat Protected</span></div>
-      </div>
-
-      <div class="tip-box glass">
-        <i class="fa-solid fa-lightbulb"></i>
-        <p id="tip-text">هک شد توسط گروهک سایبری اطلس تیم</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="panel" id="panel-about">
-    <div class="about-wrap">
-      <h2 class="section-title">About the server</h2>
-      <p class="section-text">
-        AY Roleplay is a story-driven FiveM community built on ESX Legacy. Our team focuses on
-        stable performance, custom scripts, and a economy that rewards genuine roleplay over
-        shortcuts. Whether you're running a business, climbing the ranks of the city's underworld,
-        or serving on the force, every path here is built to be played straight, not skipped.
-      </p>
-
-      <div class="feature-grid">
-        <div class="feature-card glass">
-          <i class="fa-solid fa-city"></i>
-          <h3>Custom Map</h3>
-          <p>https://discord.gg/CttTjjg6Y7</p>
-        </div>
-        <div class="feature-card glass">
-          <i class="fa-solid fa-sack-dollar"></i>
-          <h3>Player Economy</h3>
-          <p>https://discord.gg/CttTjjg6Y7</p>
-        </div>
-        <div class="feature-card glass">
-          <i class="fa-solid fa-gavel"></i>
-          <h3>Active Staff</h3>
-          <p>https://discord.gg/CttTjjg6Y7</p>
-        </div>
-        <div class="feature-card glass">
-          <i class="fa-solid fa-microchip"></i>
-          <h3>Custom Scripts</h3>
-          <p>In-house systems you won't find on every server.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section class="panel" id="panel-gallery">
-    <div class="gallery-wrap">
-      <h2 class="section-title">Gallery</h2>
-      <div class="gallery-grid">
-        <div class="gallery-item" style="background-image:url('img/char1.jpg')"><span>The Docks</span></div>
-        <div class="gallery-item" style="background-image:url('img/char2.jpg')"><span>Marina Life</span></div>
-        <div class="gallery-item" style="background-image:url('img/char3.jpg')"><span>Downtown Nights</span></div>
-        <div class="gallery-item" style="background-image:url('img/char4.jpg')"><span>Uptown Business</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STAFF -->
-  <section class="panel" id="panel-staff">
-    <div class="staff-wrap">
-      <h2 class="section-title">Staff team</h2>
-      <div class="staff-grid">
-        <div class="staff-card glass">
-          <div class="staff-avatar"><i class="fa-solid fa-crown"></i></div>
-          <h3>Amirali Yavari</h3>
-          <span class="staff-role">Founder</span>
-        </div>
-        <div class="staff-card glass">
-          <div class="staff-avatar"><i class="fa-solid fa-star"></i></div>
-          <h3>v6ehsan</h3>
-          <span class="staff-role">Management</span>
-        </div>
-        <div class="staff-card glass">
-          <div class="staff-avatar"><i class="fa-solid fa-user-shield"></i></div>
-          <h3>m.dark</h3>
-          <span class="staff-role">Community</span>
-        </div>
-        <div class="staff-card glass">
-          <div class="staff-avatar"><i class="fa-solid fa-code"></i></div>
-          <h3>MR.Alone</h3>
-          <span class="staff-role">Scripting</span>
-        </div>
-      </div>
-      <p class="staff-note">Edit the names and roles above in <code>html/index.html</code> â swap the icon, title and role for each real staff member.</p>
-    </div>
-  </section>
-
-</main>
-
-<!-- ============ BOTTOM BAR ============ -->
-<footer class="bottombar glass">
-
-  <div class="progress-section">
-    <div class="progress-labels">
-      <span id="progress-status">Initializingâ¦</span>
-      <span id="progress-percent">0%</span>
-    </div>
-    <div class="progress-track">
-      <div class="progress-fill" id="progress-fill"></div>
-      <div class="progress-glow" id="progress-glow"></div>
-    </div>
+  <!-- ============ CENTER LOGO ============ -->
+  <div class="center-logo">
+    <img src="img/logo.png" alt="AY Roleplay">
   </div>
 
-  <div class="player glass">
-    <button class="player-btn" id="player-prev" title="Previous"><i class="fa-solid fa-backward-step"></i></button>
-    <button class="player-btn player-play" id="player-play" title="Play/Pause"><i class="fa-solid fa-play" id="player-play-icon"></i></button>
-    <button class="player-btn" id="player-next" title="Next"><i class="fa-solid fa-forward-step"></i></button>
 
-    <div class="player-info">
-      <div class="player-track-name"><span id="track-title">AY Radio â Ambient Chill Mix</span></div>
-      <div class="player-seek" id="player-seek">
-        <div class="player-seek-fill" id="player-seek-fill"></div>
+  <!-- ============ TOP BAR ============ -->
+  <header class="topbar glass">
+
+    <div class="brand">
+
+      <img
+        class="brand-mark"
+        src="img/logo.png"
+        alt="AY Roleplay"
+      >
+
+      <div class="brand-text">
+        <span class="brand-name">AY ROLEPLAY</span>
+        <span class="brand-sub">Life Never Sleeps</span>
       </div>
+
     </div>
 
-    <button class="player-btn" id="player-mute" title="Mute"><i class="fa-solid fa-volume-high" id="player-vol-icon"></i></button>
-    <input type="range" class="volume-slider" id="player-volume" min="0" max="100" value="55">
+
+    <nav class="tabs" id="tabs">
+
+      <button
+        class="tab-btn active"
+        data-tab="home"
+        type="button"
+      >
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </button>
+
+      <button
+        class="tab-btn"
+        data-tab="about"
+        type="button"
+      >
+        <i class="fa-solid fa-circle-info"></i>
+        <span>About</span>
+      </button>
+
+      <button
+        class="tab-btn"
+        data-tab="gallery"
+        type="button"
+      >
+        <i class="fa-solid fa-images"></i>
+        <span>Gallery</span>
+      </button>
+
+      <button
+        class="tab-btn"
+        data-tab="staff"
+        type="button"
+      >
+        <i class="fa-solid fa-user-shield"></i>
+        <span>Staff</span>
+      </button>
+
+    </nav>
+
+
+    <div class="social-row">
+
+      <a
+        class="social-btn"
+        href="https://discord.gg/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Discord"
+      >
+        <i class="fa-brands fa-discord"></i>
+      </a>
+
+      <a
+        class="social-btn"
+        href="https://www.youtube.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="YouTube"
+      >
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+
+      <a
+        class="social-btn"
+        href="https://www.instagram.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Instagram"
+      >
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+      <a
+        class="social-btn"
+        href="https://www.tiktok.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="TikTok"
+      >
+        <i class="fa-brands fa-tiktok"></i>
+      </a>
+
+    </div>
+
+  </header>
+
+
+  <!-- ============ MAIN CONTENT ============ -->
+  <main class="content">
+
+
+    <!-- HOME -->
+    <section
+      class="panel active"
+      id="panel-home"
+    >
+
+      <div class="home-wrap">
+
+        <p class="eyebrow-line">
+          WELCOME TO AY ROLEPLAY
+        </p>
+
+        <h1 class="hero-title">
+          AY ROLEPLAY
+        </h1>
+
+        <p class="hero-tagline">
+          Your story starts here.
+        </p>
+
+
+        <div class="stat-row">
+
+          <div class="stat-chip">
+            <i class="fa-solid fa-signal"></i>
+            <span id="stat-players">
+              Connecting…
+            </span>
+          </div>
+
+          <div class="stat-chip">
+            <i class="fa-solid fa-code-branch"></i>
+            <span>
+              ESX Legacy
+            </span>
+          </div>
+
+          <div class="stat-chip">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>
+              Anti-Cheat Protected
+            </span>
+          </div>
+
+        </div>
+
+
+        <div class="tip-box glass">
+
+          <i class="fa-solid fa-lightbulb"></i>
+
+          <p id="tip-text">
+            Welcome to AY Roleplay. Please wait while the server finishes loading.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section
+      class="panel"
+      id="panel-about"
+    >
+
+      <div class="about-wrap">
+
+        <h2 class="section-title">
+          About the server
+        </h2>
+
+        <p class="section-text">
+          AY Roleplay is a story-driven FiveM community built on
+          ESX Legacy. Our team focuses on stable performance,
+          custom scripts, and an economy that rewards genuine
+          roleplay over shortcuts.
+        </p>
+
+
+        <div class="feature-grid">
+
+          <div class="feature-card glass">
+
+            <i class="fa-solid fa-city"></i>
+
+            <h3>
+              Custom Map
+            </h3>
+
+            <p>
+              A unique city experience designed for immersive roleplay.
+            </p>
+
+          </div>
+
+
+          <div class="feature-card glass">
+
+            <i class="fa-solid fa-sack-dollar"></i>
+
+            <h3>
+              Player Economy
+            </h3>
+
+            <p>
+              Build your career, manage your money and grow your character.
+            </p>
+
+          </div>
+
+
+          <div class="feature-card glass">
+
+            <i class="fa-solid fa-gavel"></i>
+
+            <h3>
+              Active Staff
+            </h3>
+
+            <p>
+              Dedicated staff members working to keep the community fair.
+            </p>
+
+          </div>
+
+
+          <div class="feature-card glass">
+
+            <i class="fa-solid fa-microchip"></i>
+
+            <h3>
+              Custom Scripts
+            </h3>
+
+            <p>
+              In-house systems and custom features built for AY Roleplay.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- GALLERY -->
+    <section
+      class="panel"
+      id="panel-gallery"
+    >
+
+      <div class="gallery-wrap">
+
+        <h2 class="section-title">
+          Gallery
+        </h2>
+
+        <div class="gallery-grid">
+
+          <div
+            class="gallery-item"
+            style="background-image: url('img/char1.jpg')"
+          >
+            <span>The Docks</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            style="background-image: url('img/char2.jpg')"
+          >
+            <span>Marina Life</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            style="background-image: url('img/char3.jpg')"
+          >
+            <span>Downtown Nights</span>
+          </div>
+
+          <div
+            class="gallery-item"
+            style="background-image: url('img/char4.jpg')"
+          >
+            <span>Uptown Business</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- STAFF -->
+    <section
+      class="panel"
+      id="panel-staff"
+    >
+
+      <div class="staff-wrap">
+
+        <h2 class="section-title">
+          Staff Team
+        </h2>
+
+        <div class="staff-grid">
+
+          <div class="staff-card glass">
+
+            <div class="staff-avatar">
+              <i class="fa-solid fa-crown"></i>
+            </div>
+
+            <h3>
+              Amirali Yavari
+            </h3>
+
+            <span class="staff-role">
+              Founder
+            </span>
+
+          </div>
+
+
+          <div class="staff-card glass">
+
+            <div class="staff-avatar">
+              <i class="fa-solid fa-star"></i>
+            </div>
+
+            <h3>
+              v6ehsan
+            </h3>
+
+            <span class="staff-role">
+              Management
+            </span>
+
+          </div>
+
+
+          <div class="staff-card glass">
+
+            <div class="staff-avatar">
+              <i class="fa-solid fa-user-shield"></i>
+            </div>
+
+            <h3>
+              m.dark
+            </h3>
+
+            <span class="staff-role">
+              Community
+            </span>
+
+          </div>
+
+
+          <div class="staff-card glass">
+
+            <div class="staff-avatar">
+              <i class="fa-solid fa-code"></i>
+            </div>
+
+            <h3>
+              MR.Alone
+            </h3>
+
+            <span class="staff-role">
+              Scripting
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <p class="staff-note">
+          AY Roleplay Staff Team
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ============ BOTTOM BAR ============ -->
+  <footer class="bottombar glass">
+
+    <div class="progress-section">
+
+      <div class="progress-labels">
+
+        <span id="progress-status">
+          Initializing…
+        </span>
+
+        <span id="progress-percent">
+          0%
+        </span>
+
+      </div>
+
+      <div class="progress-track">
+
+        <div
+          class="progress-fill"
+          id="progress-fill"
+        ></div>
+
+        <div
+          class="progress-glow"
+          id="progress-glow"
+        ></div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Music Player -->
+    <div class="player glass">
+
+      <button
+        class="player-btn"
+        id="player-prev"
+        type="button"
+        title="Previous"
+      >
+        <i class="fa-solid fa-backward-step"></i>
+      </button>
+
+      <button
+        class="player-btn player-play"
+        id="player-play"
+        type="button"
+        title="Play/Pause"
+      >
+        <i
+          class="fa-solid fa-play"
+          id="player-play-icon"
+        ></i>
+      </button>
+
+      <button
+        class="player-btn"
+        id="player-next"
+        type="button"
+        title="Next"
+      >
+        <i class="fa-solid fa-forward-step"></i>
+      </button>
+
+
+      <div class="player-info">
+
+        <div class="player-track-name">
+          <span id="track-title">
+            AY Radio — Ambient Chill Mix
+          </span>
+        </div>
+
+        <div
+          class="player-seek"
+          id="player-seek"
+        >
+          <div
+            class="player-seek-fill"
+            id="player-seek-fill"
+          ></div>
+        </div>
+
+      </div>
+
+
+      <button
+        class="player-btn"
+        id="player-mute"
+        type="button"
+        title="Mute"
+      >
+        <i
+          class="fa-solid fa-volume-high"
+          id="player-vol-icon"
+        ></i>
+      </button>
+
+      <input
+        type="range"
+        class="volume-slider"
+        id="player-volume"
+        min="0"
+        max="100"
+        value="55"
+      >
+
+    </div>
+
+  </footer>
+
+
+  <!-- ============ AUDIO ============ -->
+  <audio
+    id="bg-audio"
+    src="audio/ambient-chill.mp3"
+    preload="auto"
+    loop
+  ></audio>
+
+
+  <!-- ============ SOUND PROMPT ============ -->
+  <div
+    class="sound-prompt glass"
+    id="sound-prompt"
+  >
+
+    <i class="fa-solid fa-music"></i>
+
+    <span>
+      Click anywhere to enable music
+    </span>
+
   </div>
 
-</footer>
 
-<audio id="bg-audio" src="audio/ambient-chill.mp3" preload="auto" loop></audio>
+  <!-- JavaScript -->
+  <script src="js/script.js"></script>
 
-<div class="sound-prompt glass" id="sound-prompt">
-  <i class="fa-solid fa-music"></i>
-  <span>Click anywhere to enable music</span>
-</div>
-
-<script src="js/script.js"></script>
 </body>
 </html>
