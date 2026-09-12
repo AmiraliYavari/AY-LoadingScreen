@@ -71,21 +71,29 @@ Restart your FiveM server and the loading screen will automatically appear when 
 
 ## 📁 Project Structure
 
+The project is split into two parts: `src/` (readable, editable source) and
+`html/` (the obfuscated/minified **production build** — this is the only
+part that actually needs to sit on your live server). See
+[🔒 Security & Anti-Leak Build](#-security--anti-leak-build) below.
+
 ```text
 ay_loadingscreen/
 │
 ├── 📄 fxmanifest.lua
 ├── 📄 README.md
+├── 📄 build.sh              ← regenerates html/ from src/
+├── 📄 package.json
 │
-└── 📂 html/
+├── 📂 src/                  ← EDIT HERE — keep this folder private
+│   ├── 📄 index.html
+│   ├── 📂 css/  → 🎨 style.css
+│   └── 📂 js/   → ⚙️ script.js
+│
+└── 📂 html/                 ← PRODUCTION BUILD — this is what ships/loads
     │
-    ├── 📄 index.html
-    │
-    ├── 📂 css/
-    │   └── 🎨 style.css
-    │
-    ├── 📂 js/
-    │   └── ⚙️ script.js
+    ├── 📄 index.html         (minified, references the files below)
+    ├── 📂 css/ → 🎨 style.min.css     (minified)
+    ├── 📂 js/  → ⚙️ script.min.js     (minified + obfuscated)
     │
     ├── 📂 img/
     │   ├── 🖼️ char1.jpg
@@ -96,6 +104,50 @@ ay_loadingscreen/
     └── 📂 audio/
         └── 🎵 ambient-chill.mp3
 ```
+
+---
+
+## 🔒 Security & Anti-Leak Build
+
+`html/js/script.min.js` and `html/css/style.min.css` are generated from the
+readable sources in `src/` using `build.sh`, which:
+
+- **Obfuscates the JavaScript** (`javascript-obfuscator`): renames variables
+  and functions to meaningless hex identifiers, flattens control flow,
+  injects dead code, encodes string literals, and adds self-defending /
+  debug-protection code so the script re-mangles itself and resists being
+  formatted or stepped through in a debugger.
+- **Minifies the CSS and HTML** and strips all developer comments,
+  TODOs, and internal notes from what actually ships.
+- Removes the readable `script.js` / `style.css` from `html/` entirely —
+  only the built, obfuscated versions are referenced by `fxmanifest.lua`.
+
+**To make a change:** edit the files in `src/`, then run:
+
+```bash
+./build.sh
+```
+
+This regenerates everything under `html/`. Never hand-edit the `.min.js` /
+`.min.css` files — your changes will be overwritten (and are unreadable
+anyway).
+
+**Be realistic about what this does and doesn't protect against.** This
+raises the effort required to read, rebrand, or resell the script and stops
+casual copy-pasting — it does **not** make leaking cryptographically
+impossible, and no client-side obfuscation tool can promise that:
+
+- Anyone who ends up with **FTP/file access to a server the resource is
+  installed on** (a compromised host, a shared reseller panel, a malicious
+  co-admin) can still copy the files straight off disk. Obfuscation changes
+  what they'd see if they opened the file, not whether they can copy it.
+- The most effective protection is controlling **who gets file access** in
+  the first place — keep `src/` out of anything you hand to customers or
+  push to a public repo, and use private/permissioned Git hosting.
+- If you're selling this and want Cfx.re-backed protection, look into
+  **FiveM's official asset escrow via Keymaster** — that encrypts the
+  resource server-side so it's never distributed in plaintext at all,
+  which is a stronger guarantee than any obfuscator running in this build.
 
 ---
 

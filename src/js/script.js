@@ -5,10 +5,33 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ---------------------------------------------------------------------
-     1. TAB NAVIGATION
+     0. INTRO CURTAIN CLEANUP (avoid it blocking clicks after it fades)
+  --------------------------------------------------------------------- */
+  const curtain = document.getElementById('intro-curtain');
+  if (curtain) {
+    setTimeout(() => curtain.remove(), 1800);
+  }
+
+  /* ---------------------------------------------------------------------
+     1. TAB NAVIGATION (with sliding indicator)
   --------------------------------------------------------------------- */
   const tabButtons = document.querySelectorAll('.tab-btn');
   const panels = document.querySelectorAll('.panel');
+  const indicator = document.getElementById('tab-indicator');
+
+  function moveIndicatorTo(btn) {
+    if (!indicator || !btn) return;
+    const INSET = 14; // px shaved off each side so the line reads as a short accent mark
+    const width = Math.max(btn.offsetWidth - INSET * 2, 10);
+    indicator.style.width = width + 'px';
+    indicator.style.transform = 'translateX(' + (btn.offsetLeft + INSET) + 'px)';
+  }
+
+  const initialActive = document.querySelector('.tab-btn.active');
+  requestAnimationFrame(() => moveIndicatorTo(initialActive));
+  window.addEventListener('resize', () => {
+    moveIndicatorTo(document.querySelector('.tab-btn.active'));
+  });
 
   tabButtons.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -16,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
       panels.forEach(p => p.classList.remove('active'));
       btn.classList.add('active');
       document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+      moveIndicatorTo(btn);
     });
   });
 
@@ -40,27 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(nextSlide, SLIDE_INTERVAL);
 
   /* ---------------------------------------------------------------------
-     3. ROTATING TIPS
+     3. LIVE STATUS LABEL
+     (dispatch tips now scroll via the CSS-only ticker marquee)
   --------------------------------------------------------------------- */
-  const tips = [
-    'Tip: Press F1 in-game to open the phone and check your job board.',
-    'Tip: Visit City Hall to register your first business license.',
-    'Tip: Stay in character — report rule breaks through the Discord ticket system.',
-    'Tip: Vehicles can be stored and insured at any impound garage.',
-    'Tip: Join the Discord to keep up with events and server updates.'
-  ];
-  let tipIndex = 0;
-  const tipText = document.getElementById('tip-text');
-  setInterval(() => {
-    tipIndex = (tipIndex + 1) % tips.length;
-    tipText.style.opacity = 0;
-    setTimeout(() => {
-      tipText.textContent = tips[tipIndex];
-      tipText.style.opacity = 1;
-    }, 300);
-  }, 5000);
-  tipText.style.transition = 'opacity .3s ease';
-
   const statPlayers = document.getElementById('stat-players');
   setTimeout(() => { statPlayers.textContent = 'Connecting to city grid…'; }, 1200);
 
@@ -76,15 +82,30 @@ document.addEventListener('DOMContentLoaded', () => {
   const statusLabel = document.getElementById('progress-status');
 
   let realProgressReceived = false;
-  let currentPercent = 0;
+  let displayedPercent = 0;
+  let targetPercent = 0;
+  let rafHandle = null;
+
+  function renderProgress() {
+    const diff = targetPercent - displayedPercent;
+    displayedPercent += diff * 0.18;
+    if (Math.abs(diff) < 0.05) displayedPercent = targetPercent;
+
+    fill.style.width = displayedPercent + '%';
+    glow.style.left = 'calc(' + displayedPercent + '% - 13px)';
+    percentLabel.textContent = Math.round(displayedPercent) + '%';
+
+    if (displayedPercent !== targetPercent) {
+      rafHandle = requestAnimationFrame(renderProgress);
+    } else {
+      rafHandle = null;
+    }
+  }
 
   function setProgress(pct, statusText) {
-    pct = Math.max(0, Math.min(100, pct));
-    currentPercent = pct;
-    fill.style.width = pct + '%';
-    glow.style.left = 'calc(' + pct + '% - 13px)';
-    percentLabel.textContent = Math.round(pct) + '%';
+    targetPercent = Math.max(0, Math.min(100, pct));
     if (statusText) statusLabel.textContent = statusText;
+    if (!rafHandle) rafHandle = requestAnimationFrame(renderProgress);
   }
 
   window.addEventListener('message', (event) => {
@@ -148,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const volumeSlider = document.getElementById('player-volume');
   const muteBtn = document.getElementById('player-mute');
   const volIcon = document.getElementById('player-vol-icon');
-  const soundPrompt = document.getElementById('sound-prompt');
+  const eqBars = document.getElementById('eq-bars');
 
   audio.volume = volumeSlider.value / 100;
 
@@ -156,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
     audio.play().then(() => {
       playIcon.classList.remove('fa-play');
       playIcon.classList.add('fa-pause');
-      soundPrompt.classList.add('hidden');
+      if (eqBars) eqBars.classList.remove('paused');
     }).catch(() => {
       // Autoplay blocked — wait for user gesture.
     });
@@ -166,6 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
     audio.pause();
     playIcon.classList.remove('fa-pause');
     playIcon.classList.add('fa-play');
+    if (eqBars) eqBars.classList.add('paused');
   }
 
   playBtn.addEventListener('click', () => {

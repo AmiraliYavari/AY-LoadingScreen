@@ -11,8 +11,8 @@ loadscreen_manual_shutdown 'no'
 
 files {
     'html/index.html',
-    'html/css/style.css',
-    'html/js/script.js',
+    'html/css/style.min.css',
+    'html/js/script.min.js',
     'html/img/char1.jpg',
     'html/img/char2.jpg',
     'html/img/char3.jpg',
