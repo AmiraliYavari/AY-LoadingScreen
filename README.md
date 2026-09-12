@@ -2,13 +2,13 @@
 
 <div align="center">
 
-<img src="assets/preview.gif" width="900">
+<img src="screenshot.png" width="900">
 
 <br><br>
 
 # AY Loading Screen
 
-### A modern and customizable loading screen for FiveM servers.
+### A modern, customizable and immersive loading screen for FiveM servers.
 
 <br>
 
@@ -23,43 +23,34 @@
 
 ## ✦ About
 
-**AY Loading Screen V2** is a modern, lightweight and customizable loading screen
-created for FiveM servers.
+**AY Loading Screen V2** is a modern, lightweight and customizable loading
+screen designed for FiveM servers.
 
-Version 2 brings a completely refreshed interface with smoother animations,
-better visual experience and more customization options.
+Version 2 introduces a refreshed interface, smoother animations,
+improved visuals and a more immersive loading experience.
 
-Designed to give players a clean and professional experience from the moment
-they connect to your server.
-
----
-
-## ✦ Version 2
-
-AY Loading Screen V2 includes a redesigned interface focused on performance,
-visual quality and customization.
-
-### What's New
-
-- Completely redesigned UI
-- Smoother animations
-- Improved loading experience
-- Music player
-- Server gallery
-- Server information
-- Social media section
-- Help section
-- Responsive design
-- Improved performance
-- Easier customization
+Built to give players a clean and professional first impression
+from the moment they connect to your server.
 
 ---
 
-## ✦ Screenshot
+## ✦ Screenshots
 
 <div align="center">
 
-<img src="assets/screenshot.png" width="900">
+<img src="screenshot1.png" width="900">
+
+<br><br>
+
+<img src="screenshot2.png" width="900">
+
+<br><br>
+
+<img src="screenshot3.png" width="900">
+
+<br><br>
+
+<img src="screenshot4.png" width="900">
 
 </div>
 
@@ -67,28 +58,27 @@ visual quality and customization.
 
 ## ✦ Features
 
-### Loading Screen
+### Loading Experience
 
+- Modern dark interface
 - Custom server branding
 - Smooth loading animations
 - Loading progress
 - Custom loading messages
-- Modern dark interface
+- Responsive design
 
 ### Music Player
 
-- Play / Pause
+- Play / Pause controls
 - Volume control
 - Custom background music
 - Integrated music player
-
-### Server Gallery
-
-Showcase your server with custom images and screenshots.
+- Clean and minimal interface
 
 ### Server Information
 
-Display useful information directly on the loading screen.
+Display important server information directly
+inside the loading screen.
 
 ```text
 Server Name
@@ -98,9 +88,14 @@ Server Information
 Community Information
 ````
 
+### Server Gallery
+
+Showcase your server with custom screenshots,
+images and other media.
+
 ### Social Media
 
-Add your community links:
+Connect your players directly to your community.
 
 ```text
 Discord
@@ -112,15 +107,36 @@ Website
 
 ---
 
+## ✦ Version 2
+
+AY Loading Screen V2 brings a redesigned experience
+focused on performance, visual quality and customization.
+
+### What's New
+
+* Completely redesigned UI
+* Improved animations
+* Better loading experience
+* Improved music player
+* Server gallery
+* Server information section
+* Social media integration
+* Responsive layout
+* Improved performance
+* Easier customization
+
+---
+
 ## ✦ Installation
 
 ### 1. Download
 
-Download or clone the repository.
+Download the latest version of **AY Loading Screen**
+from this repository.
 
 ### 2. Add the Resource
 
-Place the resource inside your FiveM resources folder.
+Place the resource inside your FiveM resources directory.
 
 ```text
 resources/
@@ -130,14 +146,18 @@ resources/
 
 ### 3. Add to server.cfg
 
+Add the following line to your `server.cfg`:
+
 ```cfg
 ensure ay_loadingscreen
 ```
 
 ### 4. Restart Your Server
 
-Restart the server and the loading screen will automatically
-appear when players connect.
+Restart your FiveM server.
+
+The loading screen will automatically appear
+when players connect.
 
 ---
 
@@ -149,14 +169,18 @@ ay_loadingscreen/
 ├── assets/
 │   ├── images/
 │   ├── music/
-│   ├── icons/
-│   ├── preview.gif
-│   └── screenshot.png
+│   └── icons/
 │
 ├── html/
 │   ├── index.html
 │   ├── style.css
 │   └── script.js
+│
+├── screenshot.png
+├── screenshot1.png
+├── screenshot2.png
+├── screenshot3.png
+├── screenshot4.png
 │
 ├── client.lua
 ├── fxmanifest.lua
@@ -169,7 +193,7 @@ ay_loadingscreen/
 
 AY Loading Screen V2 is designed to be easy to customize.
 
-You can change:
+You can customize:
 
 ```text
 Server Name
@@ -184,7 +208,8 @@ Loading Text
 Gallery
 ```
 
-Edit the required files inside the resource and restart the server.
+Simply edit the required files inside the resource
+and restart your server.
 
 ---
 
@@ -199,17 +224,18 @@ No additional dependencies are required.
 
 ---
 
-## ✦ Preview
+## ✦ Performance
 
-<div align="center">
+AY Loading Screen V2 is designed to remain lightweight
+while providing a modern visual experience.
 
-<img src="assets/screenshot.png" width="700">
+The resource focuses on:
 
-<br><br>
-
-<img src="assets/preview.gif" width="700">
-
-</div>
+* Smooth animations
+* Low resource usage
+* Optimized UI
+* Responsive rendering
+* Fast loading
 
 ---
 
@@ -217,9 +243,9 @@ No additional dependencies are required.
 
 <div align="center">
 
-### AY Loading Screen V2
+# AY Loading Screen V2
 
-**Direct By AmirVentus**
+### Direct By AmirVentus
 
 Designed and developed for the FiveM community.
 
@@ -229,7 +255,7 @@ Designed and developed for the FiveM community.
 
 ## ✦ Support
 
-Found a bug or have an idea?
+Found a bug or have a suggestion?
 
 Open an issue on GitHub or contact the developer.
 
@@ -242,6 +268,7 @@ Open an issue on GitHub or contact the developer.
 ### Version 2.0.0
 
 **Made for FiveM**
+
 **Direct By AmirVentus**
 
 </div>
