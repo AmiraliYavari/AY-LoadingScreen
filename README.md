@@ -1,421 +1,247 @@
-# 🎮 AY Roleplay — Loading Screen
+# ⚡ AY Loading Screen V2
 
-<p align="center">
-  <strong>A modern & fully customizable loading screen for FiveM / ESX Legacy servers.</strong>
-</p>
+<div align="center">
 
-<p align="center">
-  <img src="https://img.shields.io/badge/FiveM-Loading%20Screen-red?style=for-the-badge&logo=rockstargames" alt="FiveM">
-  <img src="https://img.shields.io/badge/ESX-Legacy-blue?style=for-the-badge" alt="ESX Legacy">
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
-</p>
+<img src="assets/preview.gif" width="900">
 
----
+<br><br>
 
-## ✨ Preview
+# AY Loading Screen
 
-<p align="center">
-  <img src="screenshots/preview-1.png" alt="AY Roleplay Loading Screen" width="49%">
-  <img src="screenshots/preview-2.png" alt="AY Roleplay Loading Screen" width="49%">
-</p>
+### A modern and customizable loading screen for FiveM servers.
+
+<br>
+
+![Version](https://img.shields.io/badge/version-2.0.0-7c3aed?style=for-the-badge)
+![FiveM](https://img.shields.io/badge/FiveM-Ready-f97316?style=for-the-badge)
+![ESX](https://img.shields.io/badge/ESX-Compatible-16a34a?style=for-the-badge)
+![License](https://img.shields.io/badge/license-MIT-111827?style=for-the-badge)
+
+</div>
 
 ---
 
-## 🚀 Features
+## ✦ About
 
-- 🎨 **Modern Dark UI**
-- ⚡ **Real-time FiveM Loading Progress**
-- 🖼️ **Animated Background Slideshow**
-- 🎵 **Built-in Music Player**
-- ⏯️ **Play / Pause Controls**
-- ⏮️ **Previous / Next Track**
-- 🏠 **Home Section**
-- ℹ️ **About Section**
-- 🖼️ **Gallery Section**
-- 👥 **Staff Section**
-- 🔗 **Social Media Links**
-- 💡 **Rotating Loading Tips**
-- 📱 **Responsive Design**
-- 🎯 **Easy to Customize**
-- 🧩 **FiveM / ESX Legacy Ready**
-- 🔥 **Lightweight & Performance Friendly**
+**AY Loading Screen V2** is a modern, lightweight and customizable loading screen
+created for FiveM servers.
+
+Version 2 brings a completely refreshed interface with smoother animations,
+better visual experience and more customization options.
+
+Designed to give players a clean and professional experience from the moment
+they connect to your server.
 
 ---
 
-## 📦 Installation
+## ✦ Version 2
 
-### 1️⃣ Download
+AY Loading Screen V2 includes a redesigned interface focused on performance,
+visual quality and customization.
 
-Download or clone the repository and place the entire `ay_loadingscreen` folder inside your FiveM server's `resources` directory.
+### What's New
+
+- Completely redesigned UI
+- Smoother animations
+- Improved loading experience
+- Music player
+- Server gallery
+- Server information
+- Social media section
+- Help section
+- Responsive design
+- Improved performance
+- Easier customization
+
+---
+
+## ✦ Screenshot
+
+<div align="center">
+
+<img src="assets/screenshot.png" width="900">
+
+</div>
+
+---
+
+## ✦ Features
+
+### Loading Screen
+
+- Custom server branding
+- Smooth loading animations
+- Loading progress
+- Custom loading messages
+- Modern dark interface
+
+### Music Player
+
+- Play / Pause
+- Volume control
+- Custom background music
+- Integrated music player
+
+### Server Gallery
+
+Showcase your server with custom images and screenshots.
+
+### Server Information
+
+Display useful information directly on the loading screen.
+
+```text
+Server Name
+Server Description
+Server Rules
+Server Information
+Community Information
+````
+
+### Social Media
+
+Add your community links:
+
+```text
+Discord
+YouTube
+Instagram
+Telegram
+Website
+```
+
+---
+
+## ✦ Installation
+
+### 1. Download
+
+Download or clone the repository.
+
+### 2. Add the Resource
+
+Place the resource inside your FiveM resources folder.
 
 ```text
 resources/
-└── ay_loadingscreen/
+└── [scripts]/
+    └── ay_loadingscreen/
 ```
 
-### 2️⃣ Add to `server.cfg`
-
-Add the following line near the top of your `server.cfg`:
+### 3. Add to server.cfg
 
 ```cfg
 ensure ay_loadingscreen
 ```
 
-### 3️⃣ Restart Your Server
+### 4. Restart Your Server
 
-Restart your FiveM server and the loading screen will automatically appear when players connect.
+Restart the server and the loading screen will automatically
+appear when players connect.
 
 ---
 
-## 📁 Project Structure
-
-The project is split into two parts: `src/` (readable, editable source) and
-`html/` (the obfuscated/minified **production build** — this is the only
-part that actually needs to sit on your live server). See
-[🔒 Security & Anti-Leak Build](#-security--anti-leak-build) below.
+## ✦ Folder Structure
 
 ```text
 ay_loadingscreen/
 │
-├── 📄 fxmanifest.lua
-├── 📄 README.md
-├── 📄 build.sh              ← regenerates html/ from src/
-├── 📄 package.json
+├── assets/
+│   ├── images/
+│   ├── music/
+│   ├── icons/
+│   ├── preview.gif
+│   └── screenshot.png
 │
-├── 📂 src/                  ← EDIT HERE — keep this folder private
-│   ├── 📄 index.html
-│   ├── 📂 css/  → 🎨 style.css
-│   └── 📂 js/   → ⚙️ script.js
+├── html/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
 │
-└── 📂 html/                 ← PRODUCTION BUILD — this is what ships/loads
-    │
-    ├── 📄 index.html         (minified, references the files below)
-    ├── 📂 css/ → 🎨 style.min.css     (minified)
-    ├── 📂 js/  → ⚙️ script.min.js     (minified + obfuscated)
-    │
-    ├── 📂 img/
-    │   ├── 🖼️ char1.jpg
-    │   ├── 🖼️ char2.jpg
-    │   ├── 🖼️ char3.jpg
-    │   └── 🖼️ char4.jpg
-    │
-    └── 📂 audio/
-        └── 🎵 ambient-chill.mp3
+├── client.lua
+├── fxmanifest.lua
+└── README.md
 ```
 
 ---
 
-## 🔒 Security & Anti-Leak Build
+## ✦ Customization
 
-`html/js/script.min.js` and `html/css/style.min.css` are generated from the
-readable sources in `src/` using `build.sh`, which:
+AY Loading Screen V2 is designed to be easy to customize.
 
-- **Obfuscates the JavaScript** (`javascript-obfuscator`): renames variables
-  and functions to meaningless hex identifiers, flattens control flow,
-  injects dead code, encodes string literals, and adds self-defending /
-  debug-protection code so the script re-mangles itself and resists being
-  formatted or stepped through in a debugger.
-- **Minifies the CSS and HTML** and strips all developer comments,
-  TODOs, and internal notes from what actually ships.
-- Removes the readable `script.js` / `style.css` from `html/` entirely —
-  only the built, obfuscated versions are referenced by `fxmanifest.lua`.
-
-**To make a change:** edit the files in `src/`, then run:
-
-```bash
-./build.sh
-```
-
-This regenerates everything under `html/`. Never hand-edit the `.min.js` /
-`.min.css` files — your changes will be overwritten (and are unreadable
-anyway).
-
-**Be realistic about what this does and doesn't protect against.** This
-raises the effort required to read, rebrand, or resell the script and stops
-casual copy-pasting — it does **not** make leaking cryptographically
-impossible, and no client-side obfuscation tool can promise that:
-
-- Anyone who ends up with **FTP/file access to a server the resource is
-  installed on** (a compromised host, a shared reseller panel, a malicious
-  co-admin) can still copy the files straight off disk. Obfuscation changes
-  what they'd see if they opened the file, not whether they can copy it.
-- The most effective protection is controlling **who gets file access** in
-  the first place — keep `src/` out of anything you hand to customers or
-  push to a public repo, and use private/permissioned Git hosting.
-- If you're selling this and want Cfx.re-backed protection, look into
-  **FiveM's official asset escrow via Keymaster** — that encrypts the
-  resource server-side so it's never distributed in plaintext at all,
-  which is a stronger guarantee than any obfuscator running in this build.
-
----
-
-## 🎨 Customization
-
-### 🏷️ Server Name & Tagline
-
-Open:
+You can change:
 
 ```text
-html/index.html
+Server Name
+Server Logo
+Background
+Colors
+Music
+Images
+Social Links
+Server Information
+Loading Text
+Gallery
 ```
 
-Edit the following elements:
+Edit the required files inside the resource and restart the server.
+
+---
+
+## ✦ Requirements
 
 ```text
-brand-name
-hero-title
-hero-tagline
+FiveM
+FXServer
 ```
 
-You can use them to customize your server name, slogan and description.
+No additional dependencies are required.
 
 ---
 
-### 🔗 Social Links
+## ✦ Preview
 
-Inside `index.html`, find:
+<div align="center">
 
-```html
-<div class="social-row">
-```
+<img src="assets/screenshot.png" width="700">
 
-Update the `href` values with your own social media links.
+<br><br>
 
-Example:
+<img src="assets/preview.gif" width="700">
 
-```html
-<a href="https://discord.gg/yourserver">
-```
+</div>
 
 ---
 
-### ℹ️ About Section
+## ✦ Credits
 
-Customize the server description and features inside:
+<div align="center">
 
-```html
-#panel-about
-```
+### AY Loading Screen V2
 
-You can add information such as:
+**Direct By AmirVentus**
 
-- 🌐 Server information
-- 🎮 Game modes
-- 🏙️ Roleplay features
-- ⭐ Server highlights
-- 📢 Important announcements
+Designed and developed for the FiveM community.
+
+</div>
 
 ---
 
-### 👥 Staff Section
+## ✦ Support
 
-Staff members can be edited inside:
+Found a bug or have an idea?
 
-```html
-#panel-staff
-```
-
-Each staff card can be customized with:
-
-- 👤 Name
-- 🛡️ Role
-- 🎨 Icon
-- 📝 Description
-
-You can also duplicate or remove cards depending on your staff team.
-
----
-
-### 🖼️ Gallery
-
-Gallery images are located inside:
-
-```text
-html/img/
-```
-
-Replace the default images with your own screenshots or artwork.
-
-Gallery captions can be changed inside each:
-
-```html
-<span>Gallery Caption</span>
-```
-
----
-
-## 🎵 Music Player
-
-The loading screen includes a built-in music player.
-
-Add your `.mp3` files to:
-
-```text
-html/audio/
-```
-
-Then add the files to the `files {}` section inside:
-
-```text
-fxmanifest.lua
-```
-
-Example:
-
-```lua
-files {
-    'html/index.html',
-    'html/css/style.css',
-    'html/js/script.js',
-
-    'html/audio/ambient-chill.mp3'
-}
-```
-
-Additional tracks can be added to the playlist logic inside:
-
-```text
-html/js/script.js
-```
-
-The **Previous / Next** buttons are already prepared for playlist support.
-
----
-
-## 📊 Loading Progress
-
-The progress bar uses FiveM's real:
-
-```lua
-loadProgress
-```
-
-event.
-
-This means the loading progress reflects the actual resource streaming progress while the player is connecting to the server.
-
-### 🌐 Browser Preview
-
-When opening `index.html` directly in a normal browser, FiveM's `loadProgress` event is unavailable.
-
-In that case, a small demo animation is automatically used so you can preview the loading screen outside FiveM.
-
----
-
-## 🎨 Styling & Theme
-
-All visual styling is handled inside:
-
-```text
-html/css/style.css
-```
-
-Main theme variables are defined inside:
-
-```css
-:root {
-    /* Theme variables */
-}
-```
-
-This makes it easy to completely retheme the loading screen without editing the entire stylesheet.
-
----
-
-## 🌐 External Resources
-
-This project uses:
-
-- 🔤 **Google Fonts**
-- ⭐ **Font Awesome**
-
-Both resources are loaded through their official CDNs.
-
-FiveM's loading-screen browser has internet access, so they work directly in-game.
-
-> 💡 If you want a completely offline loading screen, you can download and bundle the required font files locally.
-
----
-
-## ⚙️ Requirements
-
-- 🎮 FiveM Server
-- 🧩 ESX Legacy or compatible framework
-- 🌐 Modern FiveM Client
-
-### 📌 Dependencies
-
-**No additional dependencies are required.**
-
----
-
-## 🛠️ Tech Stack
-
-| Technology | Usage |
-|------------|-------|
-| 🌐 HTML5 | Page Structure |
-| 🎨 CSS3 | UI & Animations |
-| ⚙️ JavaScript | Interactions & Logic |
-| 🎮 FiveM NUI | Loading Screen Integration |
-| ⭐ Font Awesome | Icons |
-| 🔤 Google Fonts | Typography |
-
----
-
-## 📸 Screenshots
-
-<p align="center">
-  <img src="screenshots/preview-1.png" alt="AY Roleplay Home" width="85%">
-</p>
-
-<p align="center">
-  <img src="screenshots/preview-2.png" alt="AY Roleplay Interface" width="85%">
-</p>
-
----
-
-## 💡 Why AY Roleplay Loading Screen?
-
-AY Roleplay Loading Screen was designed to give FiveM servers a more professional first impression while keeping the codebase simple and easy to customize.
-
-Whether you're running a:
-
-- 🏙️ Roleplay Server
-- 🚓 Police / Emergency Server
-- 🏎️ Racing Server
-- 🎮 Freeroam Server
-- 🌐 Custom FiveM Project
-
-You can quickly adapt the loading screen to your own server.
-
----
-
-## 🤝 Contributing
-
-Feel free to fork the project and customize it for your own FiveM server.
-
-Pull requests, improvements and suggestions are welcome! ❤️
-
----
-
-## ⭐ Support the Project
-
-If you found **AY Roleplay Loading Screen** useful:
-
-⭐ Give the repository a star  
-🍴 Fork the project  
-📢 Share it with the FiveM community
+Open an issue on GitHub or contact the developer.
 
 ---
 
 <div align="center">
 
-# 🎮 AY Roleplay
+# AY Loading Screen
 
-### Modern • Clean • Customizable
+### Version 2.0.0
 
-Made for the **FiveM Community** ❤️
+**Made for FiveM**
+**Direct By AmirVentus**
 
 </div>
